@@ -162,8 +162,15 @@ def numpy2niigz(root_numpy, root_niigz):
     fileList = os.listdir(root_numpy)
     for i in range(len(fileList)):
         root_data = f'{root_numpy}{fileList[i]}'
-        out = sitk.GetImageFromArray(np.load(root_data))
         file_name = str(fileList[i]).split('.')[0]
+
+        root_tmp_data = f'{opt.root_raw_eval_data}{file_name}/image/{file_name}.nii.gz'
+        dicom = sitk.ReadImage(root_tmp_data)
+        out = sitk.GetImageFromArray(np.load(root_data))
+        out.SetOrigin(dicom.GetOrigin())
+        out.SetSpacing(dicom.GetSpacing())
+        out.SetDirection(dicom.GetDirection())
+
         sitk.WriteImage(out, f'{root_niigz}/{file_name}.nii.gz')
 
 

@@ -1,7 +1,7 @@
 Baseline of PARSE 2022 challenge
 ==============================
 
-The repository gives an example of how to process the PARSE challenge data (implementation based on 3D-Unet). Any other preprocessing is welcomed and any framework can be used for the challenge, the only requirement is to submit `nii.gz` files with result shape/origin/spacing/direction consistent with the original CT images (please refer to `numpy2niigz() in [`submit.py`](submit.py)`). This  repository also contains the code used to prepare the data of the challenge (data preprocessing, model training and submission result creation).
+The repository gives an example of how to process the PARSE challenge data (implementation based on 3D-Unet). Any other preprocessing is welcomed and any framework can be used for the challenge, the only requirement is to submit `nii.gz` files with result shape/origin/spacing/direction consistent with the original CT images (please refer to `numpy2niigz()` in [`submit.py`](submit.py)`). This  repository also contains the code used to prepare the data of the challenge (data preprocessing, model training and submission result creation).
 
 Requirements
 ------------

@@ -48,7 +48,7 @@ class Loss_Saver:
             self.last_loss = value
         else:
             update_val = self.last_loss * 0.9 + value * 0.1
-            self.loss_list += [[update_val]]
+            self.loss_list += [update_val]
             self.last_loss = update_val
         return
 
